@@ -44,6 +44,7 @@
 #include "resolv_private.h"
 
 #include "gethostsfile.h"
+#include "hosts_cache.h"
 
 constexpr int MAXALIASES = 35;
 constexpr int MAXADDRS = 35;
@@ -73,6 +74,11 @@ int _hf_gethtbyname2(const char* name, int af, getnamaddr* info) {
 
     // TODO: Wrap the 'hf' into a RAII class or std::shared_ptr and modify the
     // sethostent_r()/endhostent_r() to get rid of manually endhostent_r(&hf) everywhere.
+    int rc = hc_gethtbyname(name, af, info);
+    if (rc != NETDB_INTERNAL) {
+        return (rc == NETDB_SUCCESS ? 0 : EAI_NODATA);
+    }
+
     FILE* hf = NULL;
     sethostent_r(&hf);
     if (hf == NULL) {
