@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35d6fd23_c1bb8c75",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1416
+      },
+      "writtenOn": "2021-01-23T13:34:37Z",
+      "side": 1,
+      "message": "PS1 -\u003e PS2\nFixed following error,\n    packages/modules/DnsResolver/hosts_cache.cpp:182:9: error: Call to function \u0027strcpy\u0027 is insecure as it does not provide bounding of the memory buffer. Replace unbounded copy functions with analogous functions that support length arguments such as \u0027strlcpy\u0027. CWE-119 [clang-analyzer-security.insecureAPI.strcpy,-warnings-as-errors]\n        strcpy(namebuf, name);",
+      "revId": "f8490d024a4b21678e12fb7f4425369f1664e163",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    }
+  ]
+}
