@@ -16,6 +16,23 @@
       "message": "PS1 -\u003e PS2\nAdded missing variables,\n    MAXALIASES\n    MAXADDRS\n\nFixed following error,\n    packages/modules/DnsResolver/hosts_cache.cpp:232:33: error: \u0027open\u0027 should use O_CLOEXEC where possible [android-cloexec-open,-warnings-as-errors]\n    h_fd \u003d open(h_path, O_RDONLY);\n                                ^\n                                 | O_CLOEXEC",
       "revId": "6332b25b8792a40e3800e7b502c0a97156caa7de",
       "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfbf68e1_8fac28e6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1416
+      },
+      "writtenOn": "2021-01-25T14:46:09Z",
+      "side": 1,
+      "message": "Till I figure out a test/ explanation why this will be required",
+      "revId": "6332b25b8792a40e3800e7b502c0a97156caa7de",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
     }
   ]
 }
