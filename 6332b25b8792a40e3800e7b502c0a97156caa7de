@@ -33,6 +33,24 @@
       "message": "Till I figure out a test/ explanation why this will be required",
       "revId": "6332b25b8792a40e3800e7b502c0a97156caa7de",
       "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef5496be_fd3d072c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1782
+      },
+      "writtenOn": "2021-01-30T17:15:59Z",
+      "side": 1,
+      "message": "I was told that the DnsResolver package is replacing the Bionic resolver, and someone requested that the Bionic change be implemented here also.  I do not have any documentation or explanation to give.  Perhaps someone could do a test with and without this patch to see if it is effective?",
+      "parentUuid": "bfbf68e1_8fac28e6",
+      "revId": "6332b25b8792a40e3800e7b502c0a97156caa7de",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
     }
   ]
 }
