@@ -51,6 +51,24 @@
       "parentUuid": "bfbf68e1_8fac28e6",
       "revId": "6332b25b8792a40e3800e7b502c0a97156caa7de",
       "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "519595ec_480ec176",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1416
+      },
+      "writtenOn": "2021-01-30T17:40:54Z",
+      "side": 1,
+      "message": "_ The code in Bionic continues to exist for app compatibility reasons, but is no longer called by the system. _ is what documentation[1] says. Is it possible that DnsResolver code is only invoked for apps targeting latest SDKs?\n\n[1]: https://source.android.com/devices/architecture/modular-system/dns-resolver",
+      "parentUuid": "ef5496be_fd3d072c",
+      "revId": "6332b25b8792a40e3800e7b502c0a97156caa7de",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
     }
   ]
 }
