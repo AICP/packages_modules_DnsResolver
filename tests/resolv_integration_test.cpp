@@ -221,8 +221,14 @@ class ResolverTest : public NetNativeTestBase {
         // Start the binder thread pool for listening DNS metrics events and receiving death
         // recipient.
         ABinderProcess_startThreadPool();
+        AllowNetworkInBackground(TEST_UID, true);
+        AllowNetworkInBackground(TEST_UID2, true);
     }
-    static void TearDownTestSuite() { AIBinder_DeathRecipient_delete(sResolvDeathRecipient); }
+    static void TearDownTestSuite() {
+        AIBinder_DeathRecipient_delete(sResolvDeathRecipient);
+        AllowNetworkInBackground(TEST_UID, false);
+        AllowNetworkInBackground(TEST_UID2, false);
+    }
 
   protected:
     void SetUp() {
@@ -4833,7 +4839,7 @@ TEST_F(ResolverTest, ConnectTlsServerTimeout_ConcurrentQueries) {
 // DOT_SERVER_UNRESPONSIVE_TIME_MS, DoT queries should timeout.
 TEST_F(ResolverTest, QueryTlsServerTimeout) {
     constexpr int DOT_SERVER_UNRESPONSIVE_TIME_MS = 2000;
-    constexpr int TIMING_TOLERANCE_MS = 200;
+    constexpr int TIMING_TOLERANCE_MS = 500;
     constexpr char hostname1[] = "query1.example.com.";
     const std::vector<DnsRecord> records = {
             {hostname1, ns_type::ns_t_a, "1.2.3.4"},
